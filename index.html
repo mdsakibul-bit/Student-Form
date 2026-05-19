@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg,#111827,#1e3a8a,#0f172a);
+      padding:30px;
+    }
+
+    .container{
+      width:430px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      padding:30px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow:0 0 25px rgba(0,0,0,0.4);
+    }
+
+    .container h1{
+      text-align:center;
+      color:white;
+      margin-bottom:25px;
+      font-size:32px;
+    }
+
+    .input-box{
+      margin-bottom:16px;
+    }
+
+    .input-box label{
+      display:block;
+      color:#fff;
+      margin-bottom:7px;
+      font-size:14px;
+    }
+
+    .input-box input,
+    .input-box select{
+      width:100%;
+      padding:12px 14px;
+      border:none;
+      outline:none;
+      border-radius:10px;
+      background:#e5e7eb;
+      font-size:14px;
+    }
+
+    .row{
+      display:flex;
+      gap:12px;
+    }
+
+    .row .input-box{
+      flex:1;
+    }
+
+    .phone-box{
+      display:flex;
+      gap:10px;
+    }
+
+    .phone-box .code{
+      width:90px;
+    }
+
+    .password-box{
+      position:relative;
+    }
+
+    .password-box span{
+      position:absolute;
+      right:15px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#333;
+      cursor:pointer;
+      font-size:13px;
+      font-weight:bold;
+    }
+
+    .gender{
+      display:flex;
+      gap:20px;
+      color:white;
+      margin-top:10px;
+    }
+
+    .btn{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background: linear-gradient(135deg,#8b5cf6,#06b6d4);
+      color:white;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      margin-top:18px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.03);
+      opacity:0.9;
+    }
+
+    @media(max-width:500px){
+      .container{
+        width:100%;
+      }
+
+      .row{
+        flex-direction:column;
+      }
+
+      .phone-box{
+        flex-direction:column;
+      }
+
+      .phone-box .code{
+        width:100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Student Registration</h1>
+
+    <div class="input-box">
+      <label>Roll Number</label>
+      <input type="text" placeholder="23.DI.17">
+    </div>
+
+    <div class="row">
+      <div class="input-box">
+        <label>Student Name</label>
+        <input type="text" placeholder="First Name">
+      </div>
+
+      <div class="input-box">
+        <label style="opacity:0;">Name</label>
+        <input type="text" placeholder="Last Name">
+      </div>
+    </div>
+
+    <div class="input-box">
+      <label>Father's Name</label>
+      <input type="text" placeholder="Enter Father's Name">
+    </div>
+
+    <div class="row">
+      <div class="input-box">
+        <label>Date of Birth</label>
+        <input type="text" placeholder="Day">
+      </div>
+
+      <div class="input-box">
+        <label style="opacity:0;">Month</label>
+        <input type="text" placeholder="Month">
+      </div>
+
+      <div class="input-box">
+        <label style="opacity:0;">Year</label>
+        <input type="text" placeholder="Year">
+      </div>
+    </div>
+
+    <div class="input-box">
+      <label>Mobile Number</label>
+
+      <div class="phone-box">
+        <input class="code" type="text" value="+880">
+
+        <input type="text" placeholder="Enter Mobile Number">
+      </div>
+    </div>
+
+    <div class="input-box">
+      <label>Email Address</label>
+      <input type="email" placeholder="Enter Email">
+    </div>
+
+    <div class="input-box">
+      <label>Password</label>
+
+      <div class="password-box">
+        <input type="password" id="password" placeholder="Enter Password">
+        <span onclick="togglePassword()">Show</span>
+      </div>
+    </div>
+
+    <div class="input-box">
+      <label>Gender</label>
+
+      <div class="gender">
+        <label><input type="radio" name="gender"> Male</label>
+        <label><input type="radio" name="gender"> Female</label>
+      </div>
+    </div>
+
+    <button class="btn">Register Now</button>
+
+  </div>
+
+  <script>
+    function togglePassword(){
+      let password = document.getElementById("password");
+
+      if(password.type === "password"){
+        password.type = "text";
+      }else{
+        password.type = "password";
+      }
+    }
+  </script>
+
+</body>
+</html>
